@@ -18,7 +18,7 @@ This system allows `CalendarOwner`s to define their availability and enables `In
 1. Fork the repository to your local machine.
 2. Install any required dependencies using `pip install -r requirements.txt`.
 3. Open the project in your preferred IDE (e.g., PyCharm, VSCode).
-4. Run the `main.py` or the appropriate entry point script to start the system.
+4. Run the `main.py` to start the system.
 5. The application will start, and you can interact with the APIs or use the provided functionality.
 
 ---
