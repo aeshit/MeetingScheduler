@@ -1,10 +1,33 @@
 # MeetingScheduler
 Python implementation of MeetingScheduler
-# Calendar Appointment System
 
 ## Overview
 
 This system allows `CalendarOwner`s to define their availability and enables `Invitee`s to search for and book available slots in their calendar. The data is managed in an in-memory singleton database. The system provides APIs for managing calendars, adding appointments, and searching for available time slots.
+
+---
+
+## How to Run
+
+### Option 1: Executable File
+1. Download the executable file.
+2. Simply run the executable file, which should work directly without requiring any additional setup.
+3. The application will load, and you can interact with the system as intended.
+
+### Option 2: Run in IDE
+1. Fork the repository to your local machine.
+2. Install any required dependencies using `pip install -r requirements.txt`.
+3. Open the project in your preferred IDE (e.g., PyCharm, VSCode).
+4. Run the `main.py` or the appropriate entry point script to start the system.
+5. The application will start, and you can interact with the APIs or use the provided functionality.
+
+---
+
+## Assumptions
+
+1. An `Invitee` is mapped to one `CalendarOwner`. This can be extended to support multiple owners if needed by introducing an additional object to represent the relationship between multiple owners and invitees.
+2. The system assumes that `Appointment` slots are strictly 1 hour long. Any other durations would need to be handled by extending the current logic.
+3. The in-memory database is used for data storage, and it will be cleared once the system is restarted.
 
 ---
 
