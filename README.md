@@ -11,15 +11,16 @@ This system allows `CalendarOwner`s to define their availability and enables `In
 
 ### Option 1: Executable File
 1. Download the executable file.
-2. Simply run the executable file, which should work directly without requiring any additional setup.
+2. Simply run the executable file, which should work directly without requiring any additional setup. If not, you can try starting it from `cmd`.
 3. The application will load, and you can interact with the system as intended.
+   Note: This will only work on a Windows machine, since it is an `.exe` file.
 
 ### Option 2: Run in IDE
 1. Fork the repository to your local machine.
-2. Install any required dependencies using `pip install -r requirements.txt`.
-3. Open the project in your preferred IDE (e.g., PyCharm, VSCode).
-4. Run the `main.py` to start the system.
-5. The application will start, and you can interact with the APIs or use the provided functionality.
+2. Open the project in your preferred IDE (e.g., PyCharm, VSCode).
+3. Run the `main.py` to start the system.
+4. The application will start in the terminal, and you can modify the file `main.py` or use the provided APIs otherwise.
+   Note: Most utility code blocks have been provided in the `main()` function.
 
 ---
 
@@ -148,8 +149,8 @@ This system allows `CalendarOwner`s to define their availability and enables `In
 
 ## Challenges
 
-### 1. Managing Overlapping Appointments with High Accuracy
-When booking appointments, ensuring that no time slots overlap was a technical challenge, especially when working with a large number of appointments. Initially, the system didn't efficiently check for overlapping appointments, which sometimes resulted in double bookings. I addressed this issue by introducing a more sophisticated data structure (like a balanced tree or interval tree) to check for overlaps, ensuring that the system could handle appointments without overlap efficiently.
+### 1. Managing Time Slots and Overlapping Appointments with High Accuracy
+When booking appointments, ensuring that no time slots overlap was a technical challenge, especially when working with a large number of appointments. Added to that was the problem that the input could be in 12 HR format or 24hr format. Initially, the system didn't efficiently check for overlapping appointments, which sometimes resulted in double bookings. I addressed this issue by modularising the input steps and reinventing the algorithm for checking duplications.
 
 ### 2. Executable File Generation Challenges
 While using `pyinstaller` to package the system into an executable, I encountered significant performance issues. The executable file took too long to build due to the inclusion of a virtual environment (`venv`). The `venv` had a large number of dependencies, which caused the packaging process to slow down considerably. This challenge was mitigated by optimizing the virtual environment setup, carefully selecting only the necessary dependencies, and making sure the environment was as lean as possible. Additionally, using the `--onefile` flag with `pyinstaller` helped reduce the executable file size but still resulted in slower build times, which was an important consideration for future improvements.
